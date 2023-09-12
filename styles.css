@@ -19,9 +19,4 @@ h1 {
 .square {
     height: 16px;
     width: 16px;
-    background-color: red;
-}
-
-.square:hover {
-    background-color: black;
 }
