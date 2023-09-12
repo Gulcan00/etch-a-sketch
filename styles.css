@@ -9,16 +9,19 @@ h1 {
     text-align: center
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
 #grid {
     display: flex;
     flex-wrap: wrap;
-    width: 256px;
-    height: 256px;
+    width: 500px;
+    height: 500px;
     margin: auto;
     border: 1px solid black;
 }
 
-.square {
-    height: 16px;
-    width: 16px;
-}

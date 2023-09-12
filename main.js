@@ -1,10 +1,12 @@
 'use strict'
 
-function createDivs(total) {
+function createDivs(side) {
     const container = document.getElementById("grid");
-    for (let i = 0; i < total; i++) {
+    container.innerHTML = "";
+    for (let i = 0; i < side*side; i++) {
         const newDiv = document.createElement("div");
-        newDiv.classList.add("square");
+        newDiv.style.flex = `0 0 ${100/side}%`;
+        newDiv.style.height = `${100/side}%`;
         newDiv.addEventListener("mouseenter", changeBackground);
         container.appendChild(newDiv);
     }
@@ -14,4 +16,13 @@ function changeBackground(e) {
     e.target.style.backgroundColor = "black";
 }
 
-createDivs(16*16);
+createDivs(16);
+
+const btn = document.querySelector("button");
+btn.addEventListener('click', () => {
+    let side = prompt("Enter size of grid (eg 16 -> 16x16)", 16);
+    if (side > 100 || side === null) {
+        side = 16;
+    }
+    createDivs(side);
+})
