@@ -7,13 +7,17 @@ function createDivs(side) {
         const newDiv = document.createElement("div");
         newDiv.style.flex = `0 0 ${100/side}%`;
         newDiv.style.height = `${100/side}%`;
+        newDiv.style.backgroundColor = "white";
         newDiv.addEventListener("mouseenter", changeBackground);
         container.appendChild(newDiv);
     }
 }
 
 function changeBackground(e) {
-    e.target.style.backgroundColor = "black";
+    const {r, g, b} = generateRandColor();
+    if (e.target.style.backgroundColor === "white") {
+        e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    }
 }
 
 createDivs(16);
@@ -26,3 +30,11 @@ btn.addEventListener('click', () => {
     }
     createDivs(side);
 })
+
+function generateRandColor() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+
+    return {r, g, b};
+}
