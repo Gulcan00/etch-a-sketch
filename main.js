@@ -20,7 +20,7 @@ createDivs(16);
 
 const btn = document.querySelector("button");
 btn.addEventListener('click', () => {
-    let side = prompt("Enter size of grid (eg 16 -> 16x16)", 16);
+    let side = prompt("Enter number of squares per side (eg 16 -> 16x16)", 16);
     if (side > 100 || side === null) {
         side = 16;
     }
