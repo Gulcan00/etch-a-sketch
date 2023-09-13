@@ -40,7 +40,7 @@ createDivs(16);
 const btn = document.querySelector("button");
 btn.addEventListener('click', () => {
     let side = parseInt(prompt("Enter number of squares per side (eg 16 -> 16x16)", 16));
-    if (side > 100 || side === null || isNaN(side)) {
+    if (side > 100 || side === null || isNaN(side) || side < 1) {
         side = 16;
     }
     createDivs(side);
